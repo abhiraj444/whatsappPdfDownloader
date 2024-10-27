@@ -79,14 +79,14 @@ const downloadVisiblePDFs = (chatDiv) => {
 
 // Function to notify the Python server to move the PDFs
 const notifyServerToMovePDFs = (chatName, pdfClickCount) => {
-  fetch('http://127.0.0.1:5000/move_pdfs', {
+  fetch('http://127.0.0.1:5000/move_pdfs_and_print', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       download_folder: 'C:\\Users\\Administrator\\Downloads\\whatsapptestDocument',  // Adjust to your download folder
-      target_folder: 'C:\\Users\\Administrator\\Desktop\\targetWhatsappDocument',
+      target_folder: 'targetWhatsappDocument',
       chat_name: chatName,
       pdf_count: pdfClickCount  // Send the count of PDFs clicked
     }),
